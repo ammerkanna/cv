@@ -275,7 +275,7 @@
         }
 
         .section {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
@@ -284,6 +284,16 @@
         .section.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Prevent overlapping sections */
+        .section:not(:last-child) {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
         }
 
         .section-title {
@@ -659,6 +669,29 @@
             .skill-item {
                 padding: 15px;
                 font-size: 1rem;
+            }
+
+            /* Ensure proper stacking order on mobile */
+            .sidebar {
+                order: 1;
+                margin-bottom: 20px;
+            }
+
+            .content {
+                order: 2;
+            }
+
+            /* Add more spacing between sections */
+            .section {
+                margin-bottom: 40px;
+            }
+
+            .skills-grid {
+                margin-bottom: 30px;
+            }
+
+            .skills-grid .skill-item:last-child {
+                margin-bottom: 20px;
             }
         }
 
@@ -1146,22 +1179,26 @@
             });
         }
 
-        // Intersection Observer for animations
+        // Intersection Observer for animations with better mobile handling
         const observerOptions = {
-            threshold: 0.3, // Trigger when 30% visible
-            rootMargin: '0px 0px -20px 0px'
+            threshold: 0.2, // Trigger when 20% visible (better for mobile)
+            rootMargin: '0px 0px -30px 0px' // More margin for mobile
         };
 
         let countersAnimated = false; // Prevent multiple animations
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    // Add delay for mobile staggered animation
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    
                     // Animate counters only once when achievements section is visible
                     if (entry.target.querySelector('.achievement-number') && !countersAnimated) {
                         countersAnimated = true;
-                        setTimeout(animateCounters, 300);
+                        setTimeout(animateCounters, 500);
                     }
                 }
             });
