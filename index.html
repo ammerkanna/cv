@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عمار رحيم عبيد الكناني - المستشار القانوني</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.8;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header with animated background */
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 30%, #4a5568 70%, #e53e3e 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="25" r="1.5" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.08)"/><circle cx="25" cy="75" r="1.2" fill="rgba(255,255,255,0.04)"/><circle cx="75" cy="75" r="0.8" fill="rgba(255,255,255,0.06)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            animation: move 20s linear infinite;
+        }
+
+        @keyframes move {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-100px) translateY(-100px); }
+        }
+
+        .profile-section {
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 40px;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #dda0dd);
+            background-size: 400% 400%;
+            animation: gradientShift 4s ease-in-out infinite;
+            padding: 8px;
+            box-shadow: 
+                0 0 0 8px rgba(255, 255, 255, 0.1),
+                0 0 0 16px rgba(255, 255, 255, 0.05),
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: brightness(1.1) contrast(1.1);
+        }
+
+        .profile-glow {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.3), transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .name {
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textShine 3s ease-in-out infinite;
+        }
+
+        @keyframes textShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffd700;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-link:hover {
+            transform: translateY(-10px) scale(1.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-link.facebook:hover { 
+            background: linear-gradient(135deg, #1877f2, #4267B2); 
+            color: white;
+        }
+        .social-link.twitter:hover { 
+            background: linear-gradient(135deg, #1da1f2, #0d8bd9); 
+            color: white;
+        }
+        .social-link.instagram:hover { 
+            background: linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); 
+            color: white;
+        }
+        .social-link.youtube:hover { 
+            background: linear-gradient(135deg, #ff0000, #cc0000); 
+            color: white;
+        }
+
+        /* Ensure Font Awesome loads properly */
+        .social-link i {
+            font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free", FontAwesome !important;
+            font-weight: 900;
+            font-style: normal;
+            display: inline-block;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .social-link i:before {
+            font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free" !important;
+        }
+
+        /* Fallback for icons */
+        .social-link.facebook i::before { content: "\f39e"; }
+        .social-link.twitter i::before { content: "\f099"; }
+        .social-link.instagram i::before { content: "\f16d"; }
+        .social-link.youtube i::before { content: "\f167"; }
+
+        /* Main content with better spacing */
+        .main-content {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 60px;
+            margin-top: 60px;
+            align-items: start;
+        }
+
+        .sidebar {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 30px;
+        }
+
+        .content {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .section {
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .section-title i {
+            margin-left: 15px;
+            font-size: 1.4rem;
+            font-family: "Font Awesome 6 Free" !important;
+            font-weight: 900 !important;
+        }
+
+        /* Specific section title icon fixes */
+        .section-title i.fa-address-book::before { content: "\f2b9"; }
+        .section-title i.fa-cogs::before { content: "\f085"; }
+        .section-title i.fa-users::before { content: "\f0c0"; }
+        .section-title i.fa-trophy::before { content: "\f091"; }
+        .section-title i.fa-graduation-cap::before { content: "\f19d"; }
+        .section-title i.fa-briefcase::before { content: "\f0b1"; }
+        .section-title i.fa-certificate::before { content: "\f0a3"; }
+        .section-title i.fa-lightbulb::before { content: "\f0eb"; }
+        .section-title i.fa-book::before { content: "\f02d"; }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.8s;
+        }
+
+        .section-title:hover::before {
+            left: 100%;
+        }
+
+        /* Contact info with better styling */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border-right: 4px solid transparent;
+        }
+
+        .contact-item:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-right-color: #667eea;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
+            font-family: "Font Awesome 6 Free" !important;
+            font-weight: 900 !important;
+        }
+
+        /* Specific icon fixes */
+        .contact-icon i.fa-phone::before { content: "\f095"; }
+        .contact-icon i.fa-envelope::before { content: "\f0e0"; }
+        .contact-icon i.fa-map-marker-alt::before { content: "\f3c5"; }
+
+        .contact-text {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.1rem;
+        }
+
+        /* Skills with animated progress */
+        .skills-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .skill-item {
+            padding: 20px;
+            background: linear-gradient(135deg, #fff7ed, #fed7aa);
+            border-radius: 15px;
+            border-right: 5px solid #f97316;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #9a3412;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .skill-item:hover::before {
+            left: 100%;
+        }
+
+        .skill-item:hover {
+            transform: translateX(-10px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.2);
+        }
+
+        /* Education and experience cards */
+        .education-item, .experience-item {
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border-right: 6px solid #3b82f6;
+            position: relative;
+            transition: all 0.4s ease;
+            overflow: visible;
+            min-height: 120px;
+        }
+
+        .education-item::before, .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 20px;
+        }
+
+        .education-item:hover::before, .experience-item:hover::before {
+            opacity: 1;
+        }
+
+        .education-item:hover, .experience-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .year {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            position: absolute;
+            top: -20px;
+            right: 30px;
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+            min-width: 80px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .education-item h3, .experience-item h3 {
+            color: #1e40af;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        .education-item p, .experience-item p {
+            color: #4b5563;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        /* Achievements with counters */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #ecfdf5, #a7f3d0);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border-top: 6px solid #10b981;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .achievement-card:hover::before {
+            opacity: 1;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.25);
+        }
+
+        .achievement-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #059669;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #059669, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .achievement-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #065f46;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .profile-image-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .social-links {
+                gap: 15px;
+            }
+            
+            .social-link {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar, .content {
+                padding: 30px;
+            }
+        }
+
+        /* Loading animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <div class="profile-glow"></div>
+                    <div class="profile-image">
+                        <img src="https://drive.google.com/uc?export=view&id=1hrylICU6TGALtlOxSZc-8jNVP28pzHgE" alt="عمار رحيم عبيد الكناني">
+                    </div>
+                </div>
+                <h1 class="name">عمار رحيم عبيد الكناني</h1>
+                <p class="title">المستشار القانوني</p>
+                <p class="subtitle">رئيس قسم الدراسات القانونية - دائرة البحوث والدراسات النيابية - مجلس النواب العراقي</p>
+                
+                <div class="social-links">
+                    <a href="https://facebook.com/ammerkanna" class="social-link facebook" target="_blank" title="فيسبوك">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/ammerkanna" class="social-link twitter" target="_blank" title="تويتر">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/ammerkanna" class="social-link instagram" target="_blank" title="إنستغرام">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com/@ammerkanna" class="social-link youtube" target="_blank" title="يوتيوب">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-address-book"></i>
+                        معلومات الاتصال
+                    </h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">07704435013</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">obied_1@yahoo.com</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">العراق - بغداد</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-cogs"></i>
+                        المهارات الأساسية
+                    </h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">حل المشكلات القانونية</div>
+                        <div class="skill-item">القدرة على التفاوض</div>
+                        <div class="skill-item">الالتزام والمسؤولية</div>
+                        <div class="skill-item">البحث القانوني المتقدم</div>
+                        <div class="skill-item">التحليل النقدي</div>
+                        <div class="skill-item">الصياغة التشريعية</div>
+                        <div class="skill-item">الاستشارات القانونية</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-users"></i>
+                        العضويات المهنية
+                    </h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">نقابة المحامين العراقيين</div>
+                        <div class="skill-item">جمعية الثقافة القانونية</div>
+                        <div class="skill-item">منظمة حقوق الإنسان</div>
+                        <div class="skill-item">اتحاد الحقوقيين العراقيين</div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="content">
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-trophy"></i>
+                        الإنجازات والأرقام
+                    </h2>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <div class="achievement-number">400+</div>
+                            <div class="achievement-text">منجز بحثي ومقال</div>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-number">20</div>
+                            <div class="achievement-text">كتاب منشور</div>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-number">30</div>
+                            <div class="achievement-text">شهادة خبرة ومشاركة</div>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-number">100</div>
+                            <div class="achievement-text">كتاب شكر وتقدير</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        المؤهلات العلمية والأكاديمية
+                    </h2>
+                    <div class="education-item">
+                        <div class="year">1991</div>
+                        <h3>بكالوريوس علوم</h3>
+                        <p>جامعة الموصل - العراق</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="year">2001</div>
+                        <h3>بكالوريوس في القانون</h3>
+                        <p>جامعة بغداد - بتسلسل (15) من مجموع (198)</p>
+                        <p>للعام الدراسي 2000-2001</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="year">2010</div>
+                        <h3>الدبلوم العالي</h3>
+                        <p>معهد البحوث والدراسات العربية</p>
+                        <p>جمهورية مصر العربية</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="year">2023</div>
+                        <h3>ماجستير في القانون الخاص</h3>
+                        <p>القانون المدني - معهد العلمين للدراسات العليا</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="year">حالياً</div>
+                        <h3>طالب دكتوراه</h3>
+                        <p>القانون الخاص - القانون التجاري</p>
+                        <p>معهد العلمين للدراسات العليا - في انتظار المناقشة</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-briefcase"></i>
+                        الخبرات المهنية والوظيفية
+                    </h2>
+                    <div class="experience-item">
+                        <div class="year">2005 - حتى الآن</div>
+                        <h3>رئيس قسم الدراسات القانونية</h3>
+                        <p>دائرة البحوث والدراسات النيابية - مجلس النواب العراقي</p>
+                        <p>أول موظف قانوني في قسم الدراسات القانونية والصياغة التشريعية منذ تأسيس الدائرة</p>
+                        <p>باحث متخصص في القوانين والتشريعات العراقية</p>
+                    </div>
+                    <div class="experience-item">
+                        <div class="year">1991 - 2005</div>
+                        <h3>محامي وخبير قضائي وباحث</h3>
+                        <p>العمل في المجال القانوني والقضائي منذ بداية التخرج</p>
+                        <p>خبرة واسعة في القانون العام والخاص في جميع فروعه</p>
+                        <p>ممارسة المحاماة والاستشارات القانونية</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-certificate"></i>
+                        الدورات التدريبية والتطوير المهني
+                    </h2>
+                    <div class="experience-item">
+                        <h3>أكثر من (16) دورة تخصصية</h3>
+                        <p>دورات محلية ودولية في المجال القانوني واللوائح البرلمانية</p>
+                        <p>تطوير مهارات البحث القانوني المتقدم والتحليل النقدي</p>
+                        <p>دورات في الصياغة التشريعية والرقابة البرلمانية</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-lightbulb"></i>
+                        الخبرات القانونية المتخصصة
+                    </h2>
+                    <div class="experience-item">
+                        <h3>القانون الدستوري والإداري</h3>
+                        <p>خبرة متقدمة في تشريع القوانين واقتراحها والرقابة البرلمانية</p>
+                        <p>إتقان المبادئ القانونية الأساسية والمهارات التحليلية</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>القانون التجاري والمدني</h3>
+                        <p>تحليل القوانين التجارية والتشريعات المنظمة للأعمال</p>
+                        <p>تعزيز المعرفة في القانون الخاص وتطبيقاته العملية</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>البحث والتطوير القانوني</h3>
+                        <p>مبادرات قانونية كان لها تأثير في العمل النيابي</p>
+                        <p>مساهمات في تطوير عمل الوزارات والمؤسسات الحكومية</p>
+                        <p>تطوير مهارات البحث القانوني المتقدم والتحليل النقدي</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-book"></i>
+                        الإنتاج العلمي والفكري
+                    </h2>
+                    <div class="experience-item">
+                        <h3>الأبحاث والمقالات القانونية</h3>
+                        <p>أكثر من (400) منجز بحثي ومقال قانوني متخصص</p>
+                        <p>النشر المستمر في مجلة البحوث البرلمانية لمجلس النواب</p>
+                        <p>عشرات المقالات المنشورة في المجلات والمواقع الإلكترونية المختلفة</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>الكتب والمؤلفات</h3>
+                        <p>(20) كتاب قانوني متخصص، تم طبع ونشر بعضها</p>
+                        <p>مؤلفات في مختلف فروع القانون العام والخاص</p>
+                        <p>إسهامات في تطوير الأدبيات القانونية العراقية</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Animated counter for achievements
+        function animateCounters() {
+            const counters = document.querySelectorAll('.achievement-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace('+', ''));
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + (counter.textContent.includes('+') ? '+' : '');
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.ceil(current) + (counter.textContent.includes('+') ? '+' : '');
+                    }
+                }, 30);
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.querySelector('.achievement-number')) {
+                        setTimeout(animateCounters, 500);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Create floating particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.getElementById('particles').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 6000);
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 300);
+
+        // Smooth scrolling for social links
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Add click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        // Add loading animation to sections
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.section').forEach((section, index) => {
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+        // Profile image hover effect
+        const profileImage = document.querySelector('.profile-image');
+        profileImage.addEventListener('mouseenter', () => {
+            profileImage.style.transform = 'scale(1.05) rotate(5deg)';
+        });
+        profileImage.addEventListener('mouseleave', () => {
+            profileImage.style.transform = 'scale(1) rotate(0deg)';
+        });
+
+        // Dynamic title animation
+        const nameElement = document.querySelector('.name');
+        let isAnimating = false;
+
+        nameElement.addEventListener('mouseenter', () => {
+            if (!isAnimating) {
+                isAnimating = true;
+                nameElement.style.animation = 'none';
+                setTimeout(() => {
+                    nameElement.style.animation = 'textShine 1s ease-in-out';
+                    setTimeout(() => {
+                        isAnimating = false;
+                    }, 1000);
+                }, 10);
+            }
+        });
+    </script>
+</body>
+</html>
