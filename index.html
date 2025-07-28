@@ -2,7 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="عمار رحيم عبيد الكناني - المستشار القانوني - رئيس قسم الدراسات القانونية في مجلس النواب العراقي">
+    <meta name="keywords" content="محامي، مستشار قانوني، العراق، بغداد، قانون، تشريع، مجلس النواب">
+    <meta name="author" content="عمار رحيم عبيد الكناني">
     <title>عمار رحيم عبيد الكناني - المستشار القانوني</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -546,6 +549,17 @@
         }
 
         /* Responsive design */
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 350px 1fr;
+                gap: 40px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+
         @media (max-width: 768px) {
             .main-content {
                 grid-template-columns: 1fr;
@@ -553,30 +567,270 @@
             }
             
             .name {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+            
+            .title {
+                font-size: 1.4rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
             }
             
             .profile-image-container {
-                width: 220px;
-                height: 220px;
+                width: 200px;
+                height: 200px;
             }
             
             .social-links {
-                gap: 15px;
+                gap: 12px;
+                justify-content: center;
+                flex-wrap: wrap;
             }
             
             .social-link {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .sidebar, .content {
+                padding: 25px 20px;
+                border-radius: 20px;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+                padding: 15px 20px;
+            }
+
+            .contact-item {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .contact-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+
+            .contact-text {
+                font-size: 1rem;
+            }
+
+            .education-item, .experience-item {
+                padding: 25px 20px;
+                margin-bottom: 20px;
+            }
+
+            .year {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+                right: 20px;
+                top: -15px;
+            }
+
+            .education-item h3, .experience-item h3 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .education-item p, .experience-item p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .achievement-number {
+                font-size: 2.5rem;
+            }
+
+            .achievement-text {
+                font-size: 1rem;
+            }
+
+            .skill-item {
+                padding: 15px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 60px 0;
+            }
+
+            .name {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            .subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .profile-image-container {
+                width: 160px;
+                height: 160px;
+                margin-bottom: 30px;
+            }
+            
+            .social-links {
+                gap: 10px;
+            }
+            
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
             }
             
             .achievements-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             .sidebar, .content {
-                padding: 30px;
+                padding: 20px 15px;
+                border-radius: 15px;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+                padding: 12px 15px;
+            }
+
+            .section-title i {
+                font-size: 1.1rem;
+                margin-left: 10px;
+            }
+
+            .contact-item {
+                padding: 12px;
+                gap: 12px;
+                border-radius: 12px;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+
+            .contact-text {
+                font-size: 0.95rem;
+            }
+
+            .education-item, .experience-item {
+                padding: 20px 15px;
+                border-radius: 15px;
+                min-height: 100px;
+            }
+
+            .year {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+                right: 15px;
+                top: -12px;
+            }
+
+            .education-item h3, .experience-item h3 {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+                margin-top: 5px;
+            }
+
+            .education-item p, .experience-item p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin-bottom: 8px;
+            }
+
+            .achievement-card {
+                padding: 20px 15px;
+                border-radius: 15px;
+            }
+
+            .achievement-number {
+                font-size: 2.2rem;
+                margin-bottom: 10px;
+            }
+
+            .achievement-text {
+                font-size: 0.95rem;
+            }
+
+            .skill-item {
+                padding: 12px;
+                font-size: 0.95rem;
+                border-radius: 12px;
+            }
+
+            .main-content {
+                margin-top: 30px;
+                gap: 25px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+
+        /* Ultra small screens */
+        @media (max-width: 360px) {
+            .name {
+                font-size: 1.6rem;
+            }
+            
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .achievements-grid {
+                gap: 12px;
+            }
+            
+            .achievement-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Touch-friendly interactions for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .social-link:active {
+                transform: translateY(-5px) scale(1.1);
+                background: linear-gradient(135deg, #667eea, #764ba2);
+            }
+            
+            .contact-item:active {
+                transform: translateX(-5px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            }
+            
+            .skill-item:active {
+                transform: translateX(-5px) scale(1.02);
+            }
+            
+            .education-item:active, .experience-item:active {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            .achievement-card:active {
+                transform: translateY(-3px) scale(1.02);
             }
         }
 
@@ -869,37 +1123,45 @@
     </div>
 
     <script>
-        // Animated counter for achievements
+        // Animated counter for achievements with proper completion
         function animateCounters() {
             const counters = document.querySelectorAll('.achievement-number');
             counters.forEach(counter => {
-                const target = parseInt(counter.textContent.replace('+', ''));
+                const targetText = counter.textContent.trim();
+                const hasPlus = targetText.includes('+');
+                const target = parseInt(targetText.replace('+', ''));
+                
                 let current = 0;
-                const increment = target / 100;
+                const increment = target / 60; // More steps for smoother animation
                 const timer = setInterval(() => {
                     current += increment;
                     if (current >= target) {
-                        counter.textContent = target + (counter.textContent.includes('+') ? '+' : '');
+                        // Ensure we show exact final number
+                        counter.textContent = target + (hasPlus ? '+' : '');
                         clearInterval(timer);
                     } else {
-                        counter.textContent = Math.ceil(current) + (counter.textContent.includes('+') ? '+' : '');
+                        counter.textContent = Math.ceil(current) + (hasPlus ? '+' : '');
                     }
-                }, 30);
+                }, 50); // Slower animation for better effect
             });
         }
 
         // Intersection Observer for animations
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.3, // Trigger when 30% visible
+            rootMargin: '0px 0px -20px 0px'
         };
+
+        let countersAnimated = false; // Prevent multiple animations
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    if (entry.target.querySelector('.achievement-number')) {
-                        setTimeout(animateCounters, 500);
+                    // Animate counters only once when achievements section is visible
+                    if (entry.target.querySelector('.achievement-number') && !countersAnimated) {
+                        countersAnimated = true;
+                        setTimeout(animateCounters, 300);
                     }
                 }
             });
